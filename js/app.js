@@ -1,9 +1,22 @@
+console.log('Hey');
+
 //  Screen 1: home page with the title on it.  Needs to have a some sort of picture, and a "click to start" button.
 
 //  Screen 2: screen will be an introduction to the story, and how we ended up needing a noble hero.  
 //  It will be a window on a black BG.  The window will be slightly transparent.
 //  Page will have a skip button and next button (if story needs to progress to another page)
 	
+$('#startText').on('click', function() {
+	$('.homePage').hide();
+	$('.charSelect').show('slow');
+});
+
+$("#startText").on('hover',function () {
+    $(this).css({
+        'cursor': 'pointer'
+    });
+});
+
 //  Screen 3: Class selection screen.  Select your class from 3 - Warrior, Dwarf and Mage.  Need to create the 
 //  following here:
 //	Constructors for each class
@@ -11,6 +24,59 @@
 //	Ability to name your Hero
 //	Begin quest button
 //	Will be a nearly full screen window on a black BG.  Semi transparent again.
+
+var Character = function() {
+  this.maxHealth = 200;
+  this.health = this.maxHealth;
+  this.strength = 10;
+  this.dexterity = 10;
+  this.wisdom = 10;
+};
+
+var Dwarf = function(name) {
+  Character.call(this);
+  this.name = name;
+  this.maxHealth = 250;
+  this.health = this.maxHealth;
+  this.strength = 20;
+};
+
+Dwarf.prototype = Object.create(Character.prototype);
+Dwarf.prototype.constructor = Dwarf;
+
+var Rogue = function(name) {
+  Character.call(this);
+  this.name = name;
+  this.strength = 9;
+  this.health = this.maxHealth;
+  this.dexterity = 20;
+};
+
+Rogue.prototype = Object.create(Character.prototype);
+Rogue.prototype.constructor = Dwarf;
+
+var Mage = function(name) {
+  Character.call(this);
+  this.name = name;
+  this.wisdom = 20;
+  this.health = this.maxHealth;
+  this.strength = 9;
+};
+
+Mage.prototype = Object.create(Character.prototype);
+Mage.prototype.constructor = Mage;
+
+var Elf = function(name) {
+  Character.call(this);
+  this.name = name;
+  this.maxHealth = 150;
+  this.health = this.maxHealth;
+  this.dexterity = 20;
+};
+
+Elf.prototype = Object.create(Character.prototype);
+Elf.prototype.constructor = Elf;
+
 
 //  Screen 4: Another story screen.  Where and what the Hero needs to accomplish to finish level.  
 //	Skip button and begin button

@@ -1,3 +1,52 @@
 body {
+	background-image: url("http://thekoalition.com/images/2013/12/witcher-3-background.jpg");
+}
+/********************
+	Start Page
+********************/
+
+
+#startText {
+	width: 320px;
+	font-size: 60px;
+	margin-top: 420px;
+	margin-left: 460px;
+}
+
+#startText:hover{
+	color: red;
+}
+
+/*******************
+Character Select Page
+********************/
+
+.charSelect {
+	width: 800px;
+	height: 800px;
+	border: 5px solid black;
+	margin: 0 auto;
+	/*display: none;*/
 	background: black;
+}
+
+#warrior{
+	width: 200px;
+	height: 700px;
+	border: 1px solid white;
+	float: left;    
+}
+
+#dwarf{
+	width: 200px;
+	height: 700px;
+	border: 1px solid white;    
+	float: right;
+}
+
+#rogue{
+	width: 200px;
+	height: 700px;
+	border: 1px solid white;    
+	margin-left: 0 auto;
 }
