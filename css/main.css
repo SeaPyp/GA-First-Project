@@ -11,10 +11,19 @@ body {
 	font-size: 60px;
 	margin-top: 420px;
 	margin-left: 460px;
+	cursor: pointer;
 }
 
 #startText:hover{
 	color: red;
+}
+
+
+.standardButton{
+	width:	100px;
+	height: 40px;
+	margin; 0 auto;
+	font-size: 20px;
 }
 
 /*******************
@@ -22,31 +31,102 @@ Character Select Page
 ********************/
 
 .charSelect {
-	width: 800px;
-	height: 800px;
-	border: 5px solid black;
+	width: 1100px;
+	height: 650px;
+	border: 0px solid black;
 	margin: 0 auto;
-	/*display: none;*/
-	background: black;
+	display: none;
+	background: rgba(0, 0, 0, 0.8);
+	position: block;
+	text-align: center;
+	transition: 0.5 ;
+	color:	white;
+	/*transform: rotateX(90deg);*/
 }
 
+.charImage {
+	width: 100%;
+	margin-top: 20px;
+	height: 200px;
+	background: lime;
+}
+
+.charText {
+	width: 100%;
+	margin-top: 60px;
+	height: 200px;
+	background: lime;
+}
+
+
 #warrior{
-	width: 200px;
-	height: 700px;
+	width: 300px;
+	height: 500px;
 	border: 1px solid white;
-	float: left;    
+	float: left;
+	margin: 15px;
+	margin-top: 20px;
+}
+
+#warrior:hover{
+	border: 1px solid red;
 }
 
 #dwarf{
-	width: 200px;
-	height: 700px;
+	width: 300px;
+	height: 500px;
 	border: 1px solid white;    
-	float: right;
+	float: left;
+	margin: 15px;
+	margin-top: 20px;
+	margin-left: 65px;
+}
+#dwarf:hover{
+	border: 1px solid red;
 }
 
 #rogue{
-	width: 200px;
-	height: 700px;
+	width: 300px;
+	height: 500px;
 	border: 1px solid white;    
-	margin-left: 0 auto;
+	float: left;
+	margin: 15px;
+	margin-top: 20px;
+	margin-left: 65px;
 }
+
+#rogue:hover{
+	border: 1px solid red;
+}
+
+/*******************
+  Story So Far Page
+********************/
+
+.storyPage{
+	width: 1100px;
+	height: 650px;
+	border: 0px solid black;
+	margin: 0 auto;
+	display: none;
+	background: rgba(0, 0, 0, 0.8);
+	position: block;
+	text-align: center;
+	/*transition: 0.5 ;*/
+	color:	white;
+	/*transform: rotateX(90deg);*/
+}
+
+.storyText{
+	width: 600px;
+	height: 500px;
+	margin-top: 15px;
+	margin-left: 250px;
+	margin-bottom: 15px;
+	border: 1px solid white;
+	font-size: 20px;
+}
+
+
+
+
