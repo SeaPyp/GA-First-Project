@@ -9,7 +9,6 @@ $(document).ready(function(){
 $('#startText').click(function() {
 	$('.homePage').hide();
 	$('.charSelect').show();
-  console.log('clicked');
 });
 });
 
@@ -22,36 +21,44 @@ $('#startText').click(function() {
 //	Will be a nearly full screen window on a black BG.  Semi transparent again.
 
 $(function (){
-$('#warrior').click(function(){
-	$(this).css({
-		'border': '1px solid yellow'
-	});
-});
+  $('#warrior').removeClass('rogue', 'dwarf');
+  $('#warrior').click(function(){
+    $(this).toggleClass('active');
+  });
 });
 
 $(function (){
-$('#rogue').click(function(){
-  $(this).css({
-    'border': '1px solid yellow'
+  $('#rogue').removeClass('warrior', 'dwarf');
+  $('#rogue').click(function(){
+    $(this).toggleClass('active');
   });
-});
 });
 
 $(function (){
-$('#dwarf').click(function(){
-  $(this).css({
-    'border': '1px solid yellow'
+  $('#dwarf').removeClass('warrior', 'rogue');  
+  $('#dwarf').click(function(){
+    $(this).toggleClass('active');
   });
 });
-});
+
+// $('.selectDiv').click(function(){
+//    $('.isSelected').removeClass('isSelected');
+//    $(this).addClass('isSelected');
+// });
+
 // 	$('btnSelect').prop('disabled',true);
 // 	return $('btnSelect').prop('disabled', false);
 // }
 
-  
+$(function(){
+$('#btnSelect').click(function() {
+  $('.charSelect').hide();
+  $('.storyPage').show();
+  console.log('Clicked');
+});  
+});
 
-
-
+// Character Creation ********************************************************
 
 var Character = function() {
   this.maxHealth = 200;
@@ -60,6 +67,18 @@ var Character = function() {
   this.dexterity = 10;
   this.wisdom = 10;
 };
+
+var Warrior = function(name) {
+  Character.call(this);
+  this.name = name;
+  this.maxHealth = 210;
+  this.health = this.maxHealth;
+  this.strength = 12;
+  this.dexterity = 12;
+};
+
+Warrior.prototype = Object.create(Character.prototype);
+Warrior.prototype.constructor = Warrior;
 
 var Dwarf = function(name) {
   Character.call(this);
@@ -81,37 +100,57 @@ var Rogue = function(name) {
 };
 
 Rogue.prototype = Object.create(Character.prototype);
-Rogue.prototype.constructor = Dwarf;
+Rogue.prototype.constructor = Rogue;
 
-var Mage = function(name) {
-  Character.call(this);
-  this.name = name;
-  this.wisdom = 20;
+
+// Monster Creation *********************************************************
+
+var Monster = function() {
+  this.maxHealth = 100;
   this.health = this.maxHealth;
-  this.strength = 9;
+  this.strength = 10;
+  this.dexterity = 10;
+  this.wisdom = 10;
 };
 
-Mage.prototype = Object.create(Character.prototype);
-Mage.prototype.constructor = Mage;
-
-var Elf = function(name) {
+var Imp = function(name) {
   Character.call(this);
   this.name = name;
-  this.maxHealth = 150;
+  this.maxHealth = 50;
   this.health = this.maxHealth;
-  this.dexterity = 20;
+  this.strength = 5;
+  this.dexterity = 2;
+  this.wisdom = 0;  
 };
 
-Elf.prototype = Object.create(Character.prototype);
-Elf.prototype.constructor = Elf;
+Imp.prototype = Object.create(Character.prototype);
+Imp.prototype.constructor = Imp;
 
 
 //  Screen 4: Another story screen.  Where and what the Hero needs to accomplish to finish level.  
-//	Skip button and begin button
-//	Window on black BG, semi transparent
+//  Skip button and begin button
+//  Window on black BG, semi transparent
 
+$(function(){
+$('#storyContinue').click(function() {
+  $('.textContainer').hide();
+  $('#storyContinue').hide();
+  $('#tutText').show();
+  $('.tutPage').show();
+  $('#begin').show();
+});
+});
 //  Screen 5: Tutorial Screen.  Will be a semi-trasprent window on the main play screen.  The tut will be a brief
-//	explanation of what the keys are, and how to move and attack.  It will be a diagram
+//  explanation of what the keys are, and how to move and attack.  It will be a diagram
+$(function(){
+$('#begin').click(function() {
+  $('.tutPage').hide();
+  $('#begin').hide();
+  $('#tutText').hide();
+  $('.storyPage').hide();
+  $('.canvasContainer').show();
+});
+});
 
 //  Screen 6:  The play screen.  Probably get a game library to create this, depending on time.  There are 2 options:
 //	Pokemon scrolling style or behind the hero camera style.  Screen will have health and experience bar.  Magic/Mana

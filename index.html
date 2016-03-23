@@ -7,20 +7,22 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+	<!-- Home page -->
 	<div class="homePage">
 		<p id="startText">Click to Start</p>
 	</div>
+	<!-- Class Select Page -->
 	<div class="charSelect">
 		<h2>Select Your Character</h2>
-		<div id="warrior">Warrior
+		<div class="character" id="warrior">Warrior
 			<div class="charImage"></div>
 			<div class="charText"></div>
 		</div>
-		<div id="rogue">Rogue
+		<div class="character" id="rogue">Rogue
 			<div class="charImage"></div>
 			<div class="charText"></div>
 		</div>
-		<div id="dwarf">Dwarf
+		<div class="character" id="dwarf">Dwarf
 			<div class="charImage"></div>
 			<div class="charText"></div>
 		</div>
@@ -28,6 +30,7 @@
 			<button class="standardButton" id="btnSelect">Select</button>
 		</div>
 	</div>
+	<!-- Story Page -->
 	<div class="storyPage">
 		<div class="textContainer">
 			<h2>The Story So Far ...</h2>
@@ -35,6 +38,19 @@
 		</div>
 		<div>
 			<button class="standardButton" id="storyContinue">Continue</button>
+		<h2 id="tutText">Tutorial</h2>
+		<div class="tutPage">
+			<p>This is the tut page that gives a brief overview of what to do and the keys to use</p>
+			<div class="keyImage"></div>
+		</div>
+		<div>
+			<button class="standardButton" id="begin">Begin</button>
+		</div>
+		</div>
 	</div>
+	<!-- Game Page -->
+	<div class="canvasContainer">
+		<canvas class="gamePage"></canvas>
+	</div>	
 </body>
 </html>
