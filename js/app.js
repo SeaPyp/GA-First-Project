@@ -57,6 +57,8 @@ var Warrior = function(name) {
 Warrior.prototype = Object.create(Character.prototype);
 Warrior.prototype.constructor = Warrior;
 
+var warrior = new Warrior('George');
+
 var Dwarf = function(name) {
   Character.call(this);
   this.name = name;
@@ -67,6 +69,8 @@ var Dwarf = function(name) {
 
 Dwarf.prototype = Object.create(Character.prototype);
 Dwarf.prototype.constructor = Dwarf;
+
+var dwarf = new Dwarf('Bob');
 
 var Rogue = function(name) {
   Character.call(this);
@@ -79,16 +83,9 @@ var Rogue = function(name) {
 Rogue.prototype = Object.create(Character.prototype);
 Rogue.prototype.constructor = Rogue;
 
+var rogue = new Rogue('Herbert');
 
 // Monster Creation *********************************************************
-
-var Monster = function() {
-  this.maxHealth = 100;
-  this.health = this.maxHealth;
-  this.strength = 10;
-  this.dexterity = 10;
-  this.wisdom = 10;
-};
 
 var Imp = function(name) {
   Character.call(this);
@@ -102,6 +99,16 @@ var Imp = function(name) {
 
 Imp.prototype = Object.create(Character.prototype);
 Imp.prototype.constructor = Imp;
+
+var imp = new Imp('Barnabus');
+
+// Combat ********************************************************************
+//  Need to compare the two generated arrays.  Once an attack is made, the atk value is
+//  removed from the health of the opposing player.  To begin it will just be 
+//  (Health - atk value).  Once it's done, I can complicate it to include dex and wis
+
+
+
 
 
 //  Screen 4: Another story screen.  Where and what the Hero needs to accomplish to finish level.  
