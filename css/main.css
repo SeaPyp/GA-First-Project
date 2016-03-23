@@ -154,12 +154,15 @@ Character Select Page
 	display: none;
 }
 
+.active {
+	border: 1px solid yellow !important;	
+}
 
 /*******************
   	 Game Page
 ********************/
 
-.canvasContainer{
+.canvasContainer {
 	width: 1100px;
 	height: 650px;
 	margin: 0 auto;
@@ -168,15 +171,5 @@ Character Select Page
 	position: block;
 }
 
-.gamePage{
-	width: 1100px;
-	height: 650px;
-	margin: 0 auto;
-	display: none;
-	background: black;
-	position: block;
-}
 
-.active {
-	border: 1px solid yellow !important;	
-}
+

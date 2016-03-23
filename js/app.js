@@ -21,35 +21,12 @@ $('#startText').click(function() {
 //	Will be a nearly full screen window on a black BG.  Semi transparent again.
 
 $(function (){
-  $('#warrior').removeClass('rogue', 'dwarf');
-  $('#warrior').click(function(){
-    $(this).toggleClass('active');
+  $('.character').click(function(){
+    $('.character').removeClass('active');
+    $(this).addClass('active');
   });
 });
-
-$(function (){
-  $('#rogue').removeClass('warrior', 'dwarf');
-  $('#rogue').click(function(){
-    $(this).toggleClass('active');
-  });
-});
-
-$(function (){
-  $('#dwarf').removeClass('warrior', 'rogue');  
-  $('#dwarf').click(function(){
-    $(this).toggleClass('active');
-  });
-});
-
-// $('.selectDiv').click(function(){
-//    $('.isSelected').removeClass('isSelected');
-//    $(this).addClass('isSelected');
-// });
-
-// 	$('btnSelect').prop('disabled',true);
-// 	return $('btnSelect').prop('disabled', false);
-// }
-
+ 
 $(function(){
 $('#btnSelect').click(function() {
   $('.charSelect').hide();
@@ -148,9 +125,22 @@ $('#begin').click(function() {
   $('#begin').hide();
   $('#tutText').hide();
   $('.storyPage').hide();
-  $('.canvasContainer').show();
+  $('.canvasContainer').show(function(){
+    return(drawing());
+  });
 });
 });
+
+var drawing = $(function(){
+  $('canvas').drawPolygon({
+  strokeStyle: 'white',
+  strokeWidth: 4,
+  fillStyle: 'white',
+  x: 550, y: 570,
+  radius: 100,
+  sides: 3
+  });
+ }); 
 
 //  Screen 6:  The play screen.  Probably get a game library to create this, depending on time.  There are 2 options:
 //	Pokemon scrolling style or behind the hero camera style.  Screen will have health and experience bar.  Magic/Mana
@@ -206,3 +196,6 @@ $('#begin').click(function() {
 
 //	Screen 13:  Main boss fight.  Same mechanics as other fights, just longer.  Once boss is defeated, pop up screen
 //	comes up congratulating ultimate master of everything and concluding story.
+
+// Draw a 90&deg; arc
+
