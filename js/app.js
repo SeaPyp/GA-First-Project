@@ -50,69 +50,45 @@ $(document).ready(function(){
         break;
       case 100 : 
         console.log('D');
+        moveRight();
         break;
       default :
         break;
     } 
 
   });
-var moveLeft = function(){
-  $('canvas').setLayer('mainChar', {
-    rotate:45
-  }).drawLayers();
+  var moveLeft = function(){
+    $('canvas').setLayer('mainChar', {
+      rotate:-45
+    }).drawLayers();
+  };
 
-};
-
-
-
-
-
+  var moveRight = function(){
+    $('canvas').setLayer('mainChar', {
+      rotate:45
+    }).drawLayers();
+  };
 
 // Combat ********************************************************************
 //  Need to compare the two generated arrays.  Once an attack is made, the atk value is
 //  removed from the health of the opposing player.  To begin it will just be 
 //  (Health - atk value).  Once it's done, I can complicate it to include dex and wis
 
-function generateEnemy() {}
+// function generateEnemy() {}
 
-(function loop() {
-    var rand = Math.round(Math.random() * (7000 - 500)) + 500;
-    setTimeout(function() {
-            //alert('A');
-            generateEnemy();
-            loop();  
-    }, rand);
-}());
+// (function loop() {
+//     var rand = Math.round(Math.random() * (7000 - 500)) + 500;
+//     setTimeout(function() {
+//             //alert('A');
+//             generateEnemy();
+//             loop();  
+//     }, rand);
+// }());
 
-
-var warrior1 = function(){
-  health : 100;
-  attack : 20;
-  };
-
-var imp1 = function(){
-  health : 40;
-  attack : 5;
-  };
-
-var imp1atk = function(){
-  (warrior.health - imp.attack)
-    return(warrior.health);
-}
-
-var impDead = function(){
-  if (imp.health === 0);
-    console.log('You WIN!');
-  };
-
-var warriorDead = function(){
-  if (warrior.health === 0);
-    console.log('You are DEAD!');
-  };
-
-var battle = function(){
-  if 
-}
+    
+// var battle = function(){
+//   if 
+// }
 
 
 
@@ -128,6 +104,7 @@ var battle = function(){
 //  Window on black BG, semi transparent
 
 
+
   $('#storyContinue').click(function() {
     $('.textContainer').hide();
     $('#storyContinue').hide();
@@ -135,7 +112,6 @@ var battle = function(){
     $('.tutPage').show();
     $('#begin').show();
   });
-
 //  Screen 5: Tutorial Screen.  Will be a semi-trasprent window on the main play screen.  The tut will be a brief
 //  explanation of what the keys are, and how to move and attack.  It will be a diagram
 
@@ -144,6 +120,7 @@ var battle = function(){
     $('#begin').hide();
     $('#tutText').hide();
     $('.storyPage').hide();
+    // $('.battleScreen').hide();
     $('.canvasContainer').show(function(){
       return(drawing());
     });
@@ -161,13 +138,65 @@ var battle = function(){
       radius: 100,
       sides: 3
     });
-   }; 
+  }; 
+
+  $('fight').click(function(){
+    impAtk();
+  });
+
+}); // Closes Doc.ready
+
+  var impAtk = function(){
+      warrior.maxHealth=warrior.maxHealth - imp.attack;
+        if (warrior.maxHealth <= 0){
+          alert('You are Dead!');
+        }else 
+        {warriorAtk()}
+   };     
+
+  var warriorAtk = function(){
+    imp.maxHealth=imp.maxHealth - warrior.attack;
+      if (imp.maxHealth <= 0){
+        alert('You Win!');
+      }else 
+      {impAtk()}
+  };
+
+  var warriorExpUp = function(){
+    if(warrior.experience >= 200){
+      warrior.maxHealth=220;
+      warrior.attack=25;
+      warrior.dexterity=11;
+      warrior.experience=200;
+    }
+  };  
+
+  var rogueExpUp = function(){
+    if(rogue.experience >= 200){
+      rogue.maxHealth=170;
+      rogue.attack=15;
+      rogue.dexterity=16;
+      rogue.experience=200;
+    }
+  };  
+
+  var dwarfExpUp = function(){
+    if(dwarf.experience >= 200){
+      dwarf.maxHealth=280;
+      dwarf.attack=31;
+      dwarf.dexterity=12;
+      dwarf.experience=200;
+    }
+  };  
+
+  var monsterArray = [imp, pitfiend];
+
 
 //  Screen 6:  The play screen.  Probably get a game library to create this, depending on time.  There are 2 options:
-//	Pokemon scrolling style or behind the hero camera style.  Screen will have health and experience bar.  Magic/Mana
-//	bar if Ihave time to create those mechanics.
+//  Pokemon scrolling style or behind the hero camera style.  Screen will have health and experience bar.  Magic/Mana
+//  bar if Ihave time to create those mechanics.
 
-//	Game mechanics.  Hero will travel along and have random encounters with monsters.  This will lead to battles and
+//  Game mechanics.  Hero will travel along and have random encounters with monsters.  This will lead to battles and
 //	experience gain.  If the hero loses, game restart ensues.  Monsters will carry items that will automatically get
 //  added to the heros inventory.  What I need to create:
 //	Fight mechanic - turn based, using D&D dice rolling logic, including weapon and armour buffers
@@ -220,4 +249,3 @@ var battle = function(){
 
 // Draw a 90&deg; arc
 
-});  // Closes Doc.ready

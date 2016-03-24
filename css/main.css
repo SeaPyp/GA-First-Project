@@ -178,8 +178,28 @@ Character Select Page
 	margin: 0 auto;
 	display: none;
 	background: black;
-	position: block;
+	position: relative;
+}
+canvas{
+	position: absolute;
+	z-index: 1
 }
 
+.battleScreen {
+	width: 900px;
+	height: 350px;
+	z-index: 2;
+	margin: 0 auto; 
+	margin-left: 100px
+	top: 100px;
+	/*display: none;*/
+	background: red;
+	position: relative;
+}
+
+#fight {
+	position: 0 auto
+	margin-top: 290;
+}
 
 
