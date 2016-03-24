@@ -1,0 +1,10 @@
+First Project at GA
+
+This is a RPG (Role Playing Game)
+There is a home screen with a start screen.  From there you get to pick a class (1 of 3?).  Then the adventure sets off.
+
+Your first screen will be a story screen as to how we got here.
+Next screen will be the first of the game, but with a popup on it detailing the keys to use.
+As you go along, you fight monsters and gain experience, and progress through the story.  Each time combat ensues, there will be a "fight algorithm" played, based on character level vs monster level.  If character wins, exp gets added to character, if they lose, gamer restarts.
+To win the game, you need to defeat the "Boss" Monster at the end of the level.
+
