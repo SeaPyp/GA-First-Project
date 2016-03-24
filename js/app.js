@@ -6,11 +6,11 @@ console.log('Hey');
 //  It will be a window on a black BG.  The window will be slightly transparent.
 //  Page will have a skip button and next button (if story needs to progress to another page)
 $(document).ready(function(){	
-$('#startText').click(function() {
-	$('.homePage').hide();
-	$('.charSelect').show();
-});
-});
+  $('#startText').click(function() {
+  	$('.homePage').hide();
+  	$('.charSelect').show();
+  });
+
 
 //  Screen 3: Class selection screen.  Select your class from 3 - Warrior, Dwarf and Mage.  Need to create the 
 //  following here:
@@ -20,92 +20,104 @@ $('#startText').click(function() {
 //	Begin quest button
 //	Will be a nearly full screen window on a black BG.  Semi transparent again.
 
-$(function (){
+
   $('.character').click(function(){
     $('.character').removeClass('active');
     $(this).addClass('active');
   });
-});
+
  
-$(function(){
-$('#btnSelect').click(function() {
-  $('.charSelect').hide();
-  $('.storyPage').show();
-  console.log('Clicked');
-});  
-});
 
-// Character Creation ********************************************************
+  $('#btnSelect').click(function() {
+    $('.charSelect').hide();
+    $('.storyPage').show();
+    console.log('Clicked');
+  });  
 
-var Character = function() {
-  this.maxHealth = 200;
-  this.health = this.maxHealth;
-  this.strength = 10;
-  this.dexterity = 10;
-  this.wisdom = 10;
+// Movement********************************************************
+
+  $('body').on('keypress', function(event){
+    switch(event.which){
+      case 119 : 
+        console.log('W');
+        break;
+      case 97 :
+        console.log('A');
+        moveLeft();
+        break;
+      case 115 :
+        console.log('S');
+        break;
+      case 100 : 
+        console.log('D');
+        break;
+      default :
+        break;
+    } 
+
+  });
+var moveLeft = function(){
+  $('canvas').setLayer('mainChar', {
+    rotate:45
+  }).drawLayers();
+
 };
 
-var Warrior = function(name) {
-  Character.call(this);
-  this.name = name;
-  this.maxHealth = 210;
-  this.health = this.maxHealth;
-  this.strength = 12;
-  this.dexterity = 12;
-};
 
-Warrior.prototype = Object.create(Character.prototype);
-Warrior.prototype.constructor = Warrior;
 
-var warrior = new Warrior('George');
 
-var Dwarf = function(name) {
-  Character.call(this);
-  this.name = name;
-  this.maxHealth = 250;
-  this.health = this.maxHealth;
-  this.strength = 20;
-};
 
-Dwarf.prototype = Object.create(Character.prototype);
-Dwarf.prototype.constructor = Dwarf;
-
-var dwarf = new Dwarf('Bob');
-
-var Rogue = function(name) {
-  Character.call(this);
-  this.name = name;
-  this.strength = 9;
-  this.health = this.maxHealth;
-  this.dexterity = 20;
-};
-
-Rogue.prototype = Object.create(Character.prototype);
-Rogue.prototype.constructor = Rogue;
-
-var rogue = new Rogue('Herbert');
-
-// Monster Creation *********************************************************
-
-var Imp = function(name) {
-  Character.call(this);
-  this.name = name;
-  this.maxHealth = 50;
-  this.health = this.maxHealth;
-  this.strength = 5;
-  this.dexterity = 2;
-  this.wisdom = 0;  
-};
-
-Imp.prototype = Object.create(Character.prototype);
-Imp.prototype.constructor = Imp;
-
-var imp = new Imp('Barnabus');
 
 // Combat ********************************************************************
 //  Need to compare the two generated arrays.  Once an attack is made, the atk value is
 //  removed from the health of the opposing player.  To begin it will just be 
 //  (Health - atk value).  Once it's done, I can complicate it to include dex and wis
+
+function generateEnemy() {}
+
+(function loop() {
+    var rand = Math.round(Math.random() * (7000 - 500)) + 500;
+    setTimeout(function() {
+            //alert('A');
+            generateEnemy();
+            loop();  
+    }, rand);
+}());
+
+
+var warrior1 = function(){
+  health : 100;
+  attack : 20;
+  };
+
+var imp1 = function(){
+  health : 40;
+  attack : 5;
+  };
+
+var imp1atk = function(){
+  (warrior.health - imp.attack)
+    return(warrior.health);
+}
+
+var impDead = function(){
+  if (imp.health === 0);
+    console.log('You WIN!');
+  };
+
+var warriorDead = function(){
+  if (warrior.health === 0);
+    console.log('You are DEAD!');
+  };
+
+var battle = function(){
+  if 
+}
+
+
+
+
+
 
 
 
@@ -115,39 +127,41 @@ var imp = new Imp('Barnabus');
 //  Skip button and begin button
 //  Window on black BG, semi transparent
 
-$(function(){
-$('#storyContinue').click(function() {
-  $('.textContainer').hide();
-  $('#storyContinue').hide();
-  $('#tutText').show();
-  $('.tutPage').show();
-  $('#begin').show();
-});
-});
+
+  $('#storyContinue').click(function() {
+    $('.textContainer').hide();
+    $('#storyContinue').hide();
+    $('#tutText').show();
+    $('.tutPage').show();
+    $('#begin').show();
+  });
+
 //  Screen 5: Tutorial Screen.  Will be a semi-trasprent window on the main play screen.  The tut will be a brief
 //  explanation of what the keys are, and how to move and attack.  It will be a diagram
-$(function(){
-$('#begin').click(function() {
-  $('.tutPage').hide();
-  $('#begin').hide();
-  $('#tutText').hide();
-  $('.storyPage').hide();
-  $('.canvasContainer').show(function(){
-    return(drawing());
-  });
-});
-});
 
-var drawing = $(function(){
-  $('canvas').drawPolygon({
-  strokeStyle: 'white',
-  strokeWidth: 4,
-  fillStyle: 'white',
-  x: 550, y: 570,
-  radius: 100,
-  sides: 3
+  $('#begin').click(function() {
+    $('.tutPage').hide();
+    $('#begin').hide();
+    $('#tutText').hide();
+    $('.storyPage').hide();
+    $('.canvasContainer').show(function(){
+      return(drawing());
+    });
   });
- }); 
+
+
+  var drawing = function(){
+    $('canvas').drawPolygon({
+      layer: true,
+      name: 'mainChar',
+      strokeStyle: 'white',
+      strokeWidth: 4,
+      fillStyle: 'white',
+      x: 550, y: 570,
+      radius: 100,
+      sides: 3
+    });
+   }; 
 
 //  Screen 6:  The play screen.  Probably get a game library to create this, depending on time.  There are 2 options:
 //	Pokemon scrolling style or behind the hero camera style.  Screen will have health and experience bar.  Magic/Mana
@@ -206,3 +220,4 @@ var drawing = $(function(){
 
 // Draw a 90&deg; arc
 
+});  // Closes Doc.ready
