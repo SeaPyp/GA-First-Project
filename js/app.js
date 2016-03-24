@@ -14,17 +14,32 @@ $(document).ready(function(){
 
 //  Screen 3: Class selection screen.  Select your class from 3 - Warrior, Dwarf and Mage.  Need to create the 
 //  following here:
-//	Constructors for each class
+//  Constructors for each class
 //  Description of each class, along with strengths and weaknesses - numerical value, out of 100
-//	Ability to name your Hero
-//	Begin quest button
-//	Will be a nearly full screen window on a black BG.  Semi transparent again.
+//  Ability to name your Hero
+//  Begin quest button
+//  Will be a nearly full screen window on a black BG.  Semi transparent again.
 
 
   $('.character').click(function(){
     $('.character').removeClass('active');
     $(this).addClass('active');
   });
+
+  //  Need to attach the character to the DOM here:
+
+  // $('.character').each(function(index, element){
+  //   // create a reference to the index in the array
+  //   $(element).data({id: index});
+  // });
+
+  // $('.character').on('click', function(){
+  //   // retrieve the index from the DOM node.
+  //   var index = $(this).data('id');
+  //   // reference the animal object from the array
+  //   var selection = playCharacter[index];
+  //   console.log( animal );
+  // });
 
  
 
@@ -69,13 +84,8 @@ $(document).ready(function(){
     }).drawLayers();
   };
 
-// Combat ********************************************************************
-//  Need to compare the two generated arrays.  Once an attack is made, the atk value is
-//  removed from the health of the opposing player.  To begin it will just be 
-//  (Health - atk value).  Once it's done, I can complicate it to include dex and wis
 
-// function generateEnemy() {}
-
+// This is to generate the Attack event.  This code needs to be adapted for my project
 // (function loop() {
 //     var rand = Math.round(Math.random() * (7000 - 500)) + 500;
 //     setTimeout(function() {
@@ -85,12 +95,7 @@ $(document).ready(function(){
 //     }, rand);
 // }());
 
-    
-// var battle = function(){
-//   if 
-// }
-
-
+// This is where the character needs to be assigned to the canvas element 
 
 
 
@@ -146,6 +151,11 @@ $(document).ready(function(){
 
 }); // Closes Doc.ready
 
+// This atk function needs to be simplified.  creating key value pairs that subbed in.
+
+
+
+// Combat ********************************************************************
   var impAtk = function(){
       warrior.maxHealth=warrior.maxHealth - imp.attack;
         if (warrior.maxHealth <= 0){
@@ -160,14 +170,15 @@ $(document).ready(function(){
         alert('You Win!');
       }else 
       {impAtk()}
-  };
+  }; 
 
+// This also needs to be simplified, so that the levels can be added ontop of one another
   var warriorExpUp = function(){
     if(warrior.experience >= 200){
       warrior.maxHealth=220;
       warrior.attack=25;
       warrior.dexterity=11;
-      warrior.experience=200;
+      warrior.experience=200; // this needs to equal the value attained
     }
   };  
 
@@ -191,6 +202,15 @@ $(document).ready(function(){
 
   var monsterArray = [imp, pitfiend];
 
+// Adding in Dexterity as a modifier for missing and critHit
+
+  // var dexterityFactor = function(){
+  //   if(player.dexterity >= monster.dexterity);
+  //     critHit*3;
+  //   }else if{
+  //     (player.dexterity<= monster.dexterity);
+  //     missChance*3;
+  //   });
 
 //  Screen 6:  The play screen.  Probably get a game library to create this, depending on time.  There are 2 options:
 //  Pokemon scrolling style or behind the hero camera style.  Screen will have health and experience bar.  Magic/Mana
