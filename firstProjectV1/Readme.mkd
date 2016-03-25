@@ -16,5 +16,5 @@ Once you have completed this quest, you get to go home and continue dreaming abo
 Your keys in this game are:  WASD (forward, left, back and right, respectively).  Combat is automatic (It's the way of the future!)
 
 Link for the game:
-[RPG Game](SeaPyp.github.io/GA-First-Project/)
+[RPG Game](http://seapyp.github.io/GA-First-Project/firstProjectV1/)
 
