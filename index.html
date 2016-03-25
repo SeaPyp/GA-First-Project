@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
 	<title>First Project</title>
 	<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
 	<script src="js/character.js"></script>
@@ -16,18 +18,30 @@
 	<!-- Class Select Page -->
 	<div class="charSelect">
 		<h2>Select Your Character</h2>
-		<div class="character" id="warrior">Warrior
-			<div class="charImage"></div>
-			<div class="charText"></div>
+		<div class="character" id="warriorDiv">Warrior
+			<div class="charImage" id="warriorImage"></div>
+			<div class="charText" id="warriorText"><p>name : 'Barry',
+  maxHealth : 200,
+  attack : 15,
+  dexterity : 10,
+  experience : 0</p></div>
 		</div>
-		<div class="character" id="rogue">Rogue
-			<div class="charImage"></div>
-			<div class="charText"></div>
+	<!-- 	<div class="character" id="rogueDiv">Rogue
+			<div class="charImage" id="rogueImage"></div>
+			<div class="charText" id="rogueText"><p>name : 'Silfer',
+  maxHealth : 150,
+  attack : 10,
+  dexterity : 15,
+  experience : 0</p></div>
 		</div>
-		<div class="character" id="dwarf">Dwarf
-			<div class="charImage"></div>
-			<div class="charText"></div>
-		</div>
+		<div class="character" id="dwarfDiv">Dwarf
+			<div class="charImage" id="dwarfImage"></div>
+			<div class="charText" id="dwarfText"><p>name : 'Bondalin',
+  maxHealth : 250,
+  attack : 20,
+  dexterity : 5,
+  experience : 0</p></div>
+		</div> -->
 		<div>
 			<button class="standardButton" id="btnSelect">Select</button>
 		</div>
@@ -51,14 +65,8 @@
 		</div>
 	</div>
 	<!-- Game Page -->
-	<div class="canvasContainer">
-		<canvas height="650" width="1100">
-		</canvas>
-		<div class="battleScreen">
-		<p>You have encountered an Imp.  Will you attack?</p>
-		<button id="fight">Fight</button>
-		</div>
-
+	<div class="battleScreen">
+		<div class="playerImage"></div>
 	</div>
 </body>
 </html>

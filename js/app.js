@@ -5,11 +5,15 @@ console.log('Hey');
 //  Screen 2: screen will be an introduction to the story, and how we ended up needing a noble hero.  
 //  It will be a window on a black BG.  The window will be slightly transparent.
 //  Page will have a skip button and next button (if story needs to progress to another page)
-$(document).ready(function(){	
+$(document).ready(function(){ 
   $('#startText').click(function() {
-  	$('.homePage').hide();
-  	$('.charSelect').show();
+    $('.homePage').hide();
+    $('.charSelect').show();
   });
+
+
+
+    
 
 
 //  Screen 3: Class selection screen.  Select your class from 3 - Warrior, Dwarf and Mage.  Need to create the 
@@ -24,91 +28,76 @@ $(document).ready(function(){
   $('.character').click(function(){
     $('.character').removeClass('active');
     $(this).addClass('active');
-  });
 
-  //  Need to attach the character to the DOM here:
+   
 
-  // $('.character').each(function(index, element){
-  //   // create a reference to the index in the array
-  //   $(element).data({id: index});
-  // });
 
-  // $('.character').on('click', function(){
-  //   // retrieve the index from the DOM node.
-  //   var index = $(this).data('id');
-  //   // reference the animal object from the array
-  //   var selection = playCharacter[index];
-  //   console.log( animal );
-  // });
+
+
+
+
+    // $(this).attr('id');
+    // console.log($(this).attr('id'));
+  
+    var warriorSelect = $('#warriorDiv').data(warrior);
+    $('#rogueDiv').data(rogue);
+    $('#dwarfDiv').data(dwarf);
 
  
 
-  $('#btnSelect').click(function() {
+    $('#btnSelect').click(function() {
+    $('playerImage').append('warriorSelect');
+    // $(transferSelection).append('mainChar');
+    console.log(transferSelection);
     $('.charSelect').hide();
     $('.storyPage').show();
     console.log('Clicked');
   });  
+  
+      
 
 // Movement********************************************************
 
-  $('body').on('keypress', function(event){
-    switch(event.which){
-      case 119 : 
-        console.log('W');
-        break;
-      case 97 :
-        console.log('A');
-        moveLeft();
-        break;
-      case 115 :
-        console.log('S');
-        break;
-      case 100 : 
-        console.log('D');
-        moveRight();
-        break;
-      default :
-        break;
-    } 
+  // $('body').on('keypress', function(event){
+  //   switch(event.which){
+  //     case 119 : 
+  //       console.log('W');
+  //       break;
+  //     case 97 :
+  //       console.log('A');
+  //       moveLeft();
+  //       break;
+  //     case 115 :
+  //       console.log('S');
+  //       break;
+  //     case 100 : 
+  //       console.log('D');
+  //       moveRight();
+  //       break;
+  //     default :
+  //       break;
+  //   } 
 
-  });
-  var moveLeft = function(){
-    $('canvas').setLayer('mainChar', {
-      rotate:-45
-    }).drawLayers();
-  };
+  // });
+  // var moveLeft = function(){
+  //   $('canvas').setLayer('mainChar', {
+  //     rotate:-45
+  //   }).drawLayers();
+  // };
 
-  var moveRight = function(){
-    $('canvas').setLayer('mainChar', {
-      rotate:45
-    }).drawLayers();
-  };
+  // var moveRight = function(){
+  //   $('canvas').setLayer('mainChar', {
+  //     rotate:45
+  //   }).drawLayers();
+  // };
 
 
-// This is to generate the Attack event.  This code needs to be adapted for my project
-// (function loop() {
-//     var rand = Math.round(Math.random() * (7000 - 500)) + 500;
-//     setTimeout(function() {
-//             //alert('A');
-//             generateEnemy();
-//             loop();  
-//     }, rand);
-// }());
 
 // This is where the character needs to be assigned to the canvas element 
-
-
-
-
-
-
-
 
 //  Screen 4: Another story screen.  Where and what the Hero needs to accomplish to finish level.  
 //  Skip button and begin button
 //  Window on black BG, semi transparent
-
-
 
   $('#storyContinue').click(function() {
     $('.textContainer').hide();
@@ -126,89 +115,109 @@ $(document).ready(function(){
     $('#tutText').hide();
     $('.storyPage').hide();
     // $('.battleScreen').hide();
-    $('.canvasContainer').show(function(){
+    $('.battleScreen').show(function(){
       return(drawing());
     });
   });
 
 
-  var drawing = function(){
-    $('canvas').drawPolygon({
-      layer: true,
-      name: 'mainChar',
-      strokeStyle: 'white',
-      strokeWidth: 4,
-      fillStyle: 'white',
-      x: 550, y: 570,
-      radius: 100,
-      sides: 3
-    });
-  }; 
+  // var drawing = function(){
+  //   $('canvas').drawPolygon({
+  //     layer: true,
+  //     name: 'mainChar',
+  //     strokeStyle: 'white',
+  //     strokeWidth: 4,
+  //     fillStyle: 'white',
+  //     x: 550, y: 570,
+  //     radius: 100,
+  //     sides: 3
+  //   });
+  // }; 
 
   $('fight').click(function(){
     impAtk();
   });
 
-}); // Closes Doc.ready
 
 // This atk function needs to be simplified.  creating key value pairs that subbed in.
 
 
 
 // Combat ********************************************************************
-  var impAtk = function(){
-      warrior.maxHealth=warrior.maxHealth - imp.attack;
-        if (warrior.maxHealth <= 0){
-          alert('You are Dead!');
-        }else 
-        {warriorAtk()}
-   };     
 
-  var warriorAtk = function(){
-    imp.maxHealth=imp.maxHealth - warrior.attack;
+// This is to generate the Attack event.  This code needs to be adapted for my project
+// var enemyDead; 
+
+//   $('canvas').on('click', function(){
+//   (function loop() {
+//       var rand = Math.round(Math.random(500));
+//       enemyDead = setTimeout(function() {
+//               generateEnemy();
+//               // loop();  
+//       }, rand);
+//   }());
+// });
+
+  var warriorAtk = imp.maxHealth=imp.maxHealth - warrior.attack;
       if (imp.maxHealth <= 0){
-        alert('You Win!');
-      }else 
-      {impAtk()}
-  }; 
+        alert('You killed the Imp, well done!');
+        return;
+        }else if (imp.maxHealth > 0){
+        alert('WARRIOR ATTACK\nImp health is now: '+ imp.maxHealth);}
+    var impAtk = warrior.maxHealth=warrior.maxHealth - imp.attack;
+          if (warrior.maxHealth <= 0){
+            alert('You died!  You are Useless!');
+            clearInterval(enemyDead);
+            return;
+          }else if (warrior.maxHealth > 0){
+          alert('IMP ATTACK\nWarrior health is now: ' + warrior.maxHealth);
+          
+   }
+  });
+
+  
+}); // Closes Doc.ready
+
+
+
 
 // This also needs to be simplified, so that the levels can be added ontop of one another
-  var warriorExpUp = function(){
-    if(warrior.experience >= 200){
-      warrior.maxHealth=220;
-      warrior.attack=25;
-      warrior.dexterity=11;
-      warrior.experience=200; // this needs to equal the value attained
-    }
-  };  
+  // var warriorExpUp = function(){
+  //   if(warrior.experience >= 200){
+  //     warrior.maxHealth=220;
+  //     warrior.attack=25;
+  //     warrior.dexterity=11;
+  //     warrior.experience=200; // this needs to equal the value attained
+  //   }
+  // };  
 
-  var rogueExpUp = function(){
-    if(rogue.experience >= 200){
-      rogue.maxHealth=170;
-      rogue.attack=15;
-      rogue.dexterity=16;
-      rogue.experience=200;
-    }
-  };  
+  // var rogueExpUp = function(){
+  //   if(rogue.experience >= 200){
+  //     rogue.maxHealth=170;
+  //     rogue.attack=15;
+  //     rogue.dexterity=16;
+  //     rogue.experience=200;
+  //   }
+  // };  
 
-  var dwarfExpUp = function(){
-    if(dwarf.experience >= 200){
-      dwarf.maxHealth=280;
-      dwarf.attack=31;
-      dwarf.dexterity=12;
-      dwarf.experience=200;
-    }
-  };  
+  // var dwarfExpUp = function(){
+  //   if(dwarf.experience >= 200){
+  //     dwarf.maxHealth=280;
+  //     dwarf.attack=31;
+  //     dwarf.dexterity=12;
+  //     dwarf.experience=200;
+  //   }
+  // };  
 
-  var monsterArray = [imp, pitfiend];
+  // var monsterArray = [imp, pitfiend];
 
 // Adding in Dexterity as a modifier for missing and critHit
 
   // var dexterityFactor = function(){
-  //   if(player.dexterity >= monster.dexterity);
+  //   if(player.dexterity > monster.dexterity);
   //     critHit*3;
   //   }else if{
-  //     (player.dexterity<= monster.dexterity);
+  //     (player.dexterity <= monster.dexterity);
   //     missChance*3;
   //   });
 

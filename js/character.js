@@ -12,7 +12,7 @@ var dwarf = {
   maxHealth : 250,
   attack : 20,
   dexterity : 5,
-  experience : 0,
+  experience : 0
 };
 
 var rogue = {
@@ -22,6 +22,7 @@ var rogue = {
   dexterity : 15,
   experience : 0, 
 };
+
 
 // Monsters
 var imp = {
@@ -47,16 +48,7 @@ var bossMonster ={
   dexterity : 10
 };
 
-// I need to associate the character (when it's selected on page 2.  Therefore, 
-// each div Id's need to be associated with a particular character
 // that has been created above) with the "mainChar" in my canvas.
-
-// var playCharacters = [
-//     {name: 'Barry', maxHealth: 200, attack: 15, dexterity 10, experience: 0},
-//     {name: 'Bondalin', maxHealth: 250, attack: 20, dexterity 5, experience: 0},
-//     {name: 'Silfer', maxHealth: 150, attack: 10, dexterity 15, experience: 0},
-// ];
-
 
 
 // var Character = function() {

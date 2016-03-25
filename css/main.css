@@ -40,7 +40,7 @@ body {
 Character Select Page
 ********************/
 
-.charSelect {
+/*.charSelect {
 	width: 1100px;
 	height: 650px;
 	border: 0px solid black;
@@ -51,25 +51,24 @@ Character Select Page
 	text-align: center;
 	transition: 0.5 ;
 	color:	white;
-	/*transform: rotateX(90deg);*/
+	transform: rotateX(90deg);
 }
 
 .charImage {
 	width: 100%;
 	margin-top: 20px;
 	height: 200px;
-	background: lime;
 }
 
 .charText {
 	width: 100%;
 	margin-top: 60px;
 	height: 200px;
-	background: lime;
+	background: rgba(0, 0, 0, 0.7);
 }
 
 
-#warrior{
+#warriorDiv{
 	width: 300px;
 	height: 500px;
 	border: 1px solid transparent;
@@ -78,11 +77,11 @@ Character Select Page
 	margin-top: 20px;
 }
 
-#warrior:hover{
+#warriorDiv:hover{
 	border: 1px solid red;
 }
 
-#dwarf{
+#dwarfDiv{
 	width: 300px;
 	height: 500px;
 	border: 1px solid transparent;    
@@ -91,11 +90,11 @@ Character Select Page
 	margin-top: 20px;
 	margin-left: 65px;
 }
-#dwarf:hover{
+#dwarfDiv:hover{
 	border: 1px solid red;
 }
 
-#rogue{
+#rogueDiv{
 	width: 300px;
 	height: 500px;
 	border: 1px solid transparent;    
@@ -105,15 +104,34 @@ Character Select Page
 	margin-left: 65px;
 }
 
-#rogue:hover{
+#rogueDiv:hover{
 	border: 1px solid red;
 }
+
+#warriorImage {
+	background-image: url("../Images/warrior.jpg");
+	background-size: cover;
+	height: 200px;
+}
+
+#rogueImage {
+	background-image: url("../Images/rogue.jpg");
+	background-size: cover;
+}
+
+#dwarfImage {
+	background-image: url("../Images/dwarf.jpg");
+	background-size: cover;
+}*/
+
+
+
 
 /*******************
   Story So Far Page
 ********************/
 
-.storyPage{
+./*storyPage{
 	width: 1100px;
 	height: 650px;
 	border: 0px solid black;
@@ -122,9 +140,9 @@ Character Select Page
 	background: rgba(0, 0, 0, 0.8);
 	position: block;
 	text-align: center;
-	/*transition: 0.5 ;*/
+	transition: 0.5 ;
 	color:	white;
-	/*transform: rotateX(90deg);*/
+	transform: rotateX(90deg);
 }
 
 .storyText{
@@ -166,40 +184,50 @@ Character Select Page
 
 .active {
 	border: 1px solid yellow !important;	
-}
+}*/
 
 /*******************
   	 Game Page
 ********************/
-
-.canvasContainer {
+/*
+.battleScreen {
 	width: 1100px;
 	height: 650px;
-	margin: 0 auto;
-	display: none;
-	background: black;
-	position: relative;
-}
-canvas{
-	position: absolute;
-	z-index: 1
-}
-
-.battleScreen {
-	width: 900px;
-	height: 350px;
 	z-index: 2;
 	margin: 0 auto; 
 	margin-left: 100px
 	top: 100px;
-	/*display: none;*/
-	background: red;
+	display: none;
+	background: rgba(0, 0, 0, 0.8);
 	position: relative;
 }
 
-#fight {
-	position: 0 auto
-	margin-top: 290;
+.playerImage {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    -webkit-animation-name: example; 
+    
+    -webkit-animation-iteration-count: infinite;
+    animation-name: example;
+    animation-iteration-count: infinite;
 }
 
+/* Chrome, Safari, Opera */
+/*@-webkit-keyframes example {
+    0%   {left:0px; top:0px;}
+    25%  {background-color:tomato; left:600px; top:400px;}
+    50%  {background-color:indianred; left:600px; top:0px;}
+    75%  {background-color:dodgerblue; left:0px; top:400px;}
+    100% {left:0px; top:0px;}
+}*/
 
+/* Standard syntax */
+/*@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}*/
