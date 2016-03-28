@@ -145,8 +145,37 @@ $(document).ready(function(){
 
 // Combat ********************************************************************
 
-// This is to generate the Attack event.  This code needs to be adapted for my project
-// var enemyDead; 
+//Puts a random Monster infront of you, depending on level
+
+// Random Monster generation function (level dependent)
+  var monsterGenerator = function(){
+    if (playerLevel >= 1);
+    then
+
+}
+
+var rand = monsterArray[Math.floor(Math.random() * myArray.length)];
+var rand1 = monsterArray[Math.floor(Math.random() * myArray.length)];
+
+
+// This is the function if I want a random monster generated, but not the same one twice.
+// Array.prototype.generateMonster = function(last) {
+//    if (this.length === 0) {
+//       return;
+//    } else if (this.length == 1) {
+//       return this[0];
+//    } else {
+//       var num = 0;
+//       do {
+//          num = Math.floor(Math.random() * this.length);
+//       } while (this[num] == last);
+//       return this[num];
+//    }
+// };
+
+// To call the function that I created above.
+var generateMonster = monsterArray.randomDiffElement(lastRandomElement);
+
 
 //   $('canvas').on('click', function(){
 //   (function loop() {

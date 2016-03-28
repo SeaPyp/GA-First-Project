@@ -41,6 +41,14 @@ var pitfiend = {
   experience : 40,
 };
 
+var demon = {
+  name : 'Balthazar',
+  maxHealth : 80,
+  attack : 18,
+  dexterity : 9,
+  experience : 65,
+};
+
 var bossMonster ={
   name : 'Beelzebub',
   maxHealth : 1000,
@@ -49,6 +57,15 @@ var bossMonster ={
 };
 
 // that has been created above) with the "mainChar" in my canvas.
+
+// Arrays of monsters (level dependent)
+
+var rand =[imp, pitfiend];
+var rand1 = [imp1, pitfiend1, demon];
+
+
+var rand = monsterArray[Math.floor(Math.random() * myArray.length)];
+var rand1 = monsterArray[Math
 
 
 // var Character = function() {
