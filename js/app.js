@@ -5,16 +5,6 @@ console.log('Hey');
 //  Screen 2: screen will be an introduction to the story, and how we ended up needing a noble hero.  
 //  It will be a window on a black BG.  The window will be slightly transparent.
 //  Page will have a skip button and next button (if story needs to progress to another page)
-$(document).ready(function(){ 
-  $('#startText').click(function() {
-    $('.homePage').hide();
-    $('.charSelect').show();
-  });
-
-
-
-    
-
 
 //  Screen 3: Class selection screen.  Select your class from 3 - Warrior, Dwarf and Mage.  Need to create the 
 //  following here:
@@ -24,37 +14,59 @@ $(document).ready(function(){
 //  Begin quest button
 //  Will be a nearly full screen window on a black BG.  Semi transparent again.
 
+//**************************
+//     Screen Transitions
+// ***************************
 
-  $('.character').click(function(){
-    $('.character').removeClass('active');
-    $(this).addClass('active');
+$(document).ready(function(){ 
+  $('#startText').click(function() {
+    $('.homePage').hide();
+    $('.charSelect').show();
+  });
 
-   
-
-
-
-
-
-
-    // $(this).attr('id');
-    // console.log($(this).attr('id'));
-  
-    var warriorSelect = $('#warriorDiv').data(warrior);
-    $('#rogueDiv').data(rogue);
-    $('#dwarfDiv').data(dwarf);
-
- 
-
-    $('#btnSelect').click(function() {
-    $('playerImage').append('warriorSelect');
+  $('#btnSelect').click(function() {
+    // $('playerImage').append('warriorSelect');
     // $(transferSelection).append('mainChar');
-    console.log(transferSelection);
+    // console.log(transferSelection);
     $('.charSelect').hide();
     $('.storyPage').show();
     console.log('Clicked');
   });  
+   
+  $('#storyContinue').click(function() {
+    $('.textContainer').hide();
+    $('#storyContinue').hide();
+    $('#tutText').show();
+    $('.tutPage').show();
+    $('#begin').show();
+  });
+
+        
+  $('#begin').click(function() {
+    $('.tutPage').hide();
+    $('#begin').hide();
+    $('#tutText').hide();
+    $('.storyPage').hide();
+    // $('.battleScreen').hide();
+    $('.battleScreen').show();
+  });
   
-      
+
+// Function for highlighting only one div 
+  $('.character').click(function(){
+    $('.character').removeClass('active');
+    $(this).addClass('active');
+  });
+
+
+  var warriorSelect = $('#warriorDiv').data(warrior);
+  $('#rogueDiv').data(rogue);
+  $('#dwarfDiv').data(dwarf);
+
+
+  
+    // $(this).attr('id');
+    // console.log($(this).attr('id'));
 
 // Movement********************************************************
 
@@ -99,26 +111,9 @@ $(document).ready(function(){
 //  Skip button and begin button
 //  Window on black BG, semi transparent
 
-  $('#storyContinue').click(function() {
-    $('.textContainer').hide();
-    $('#storyContinue').hide();
-    $('#tutText').show();
-    $('.tutPage').show();
-    $('#begin').show();
-  });
 //  Screen 5: Tutorial Screen.  Will be a semi-trasprent window on the main play screen.  The tut will be a brief
 //  explanation of what the keys are, and how to move and attack.  It will be a diagram
 
-  $('#begin').click(function() {
-    $('.tutPage').hide();
-    $('#begin').hide();
-    $('#tutText').hide();
-    $('.storyPage').hide();
-    // $('.battleScreen').hide();
-    $('.battleScreen').show(function(){
-      return(drawing());
-    });
-  });
 
 
   // var drawing = function(){
@@ -134,9 +129,9 @@ $(document).ready(function(){
   //   });
   // }; 
 
-  $('fight').click(function(){
-    impAtk();
-  });
+  // $('fight').click(function(){
+  //   impAtk();
+  // });
 
 
 // This atk function needs to be simplified.  creating key value pairs that subbed in.
@@ -148,14 +143,14 @@ $(document).ready(function(){
 //Puts a random Monster infront of you, depending on level
 
 // Random Monster generation function (level dependent)
-  var monsterGenerator = function(){
-    if (playerLevel >= 1);
-    then
+//   var monsterGenerator = function(){
+//     if (playerLevel >= 1);
+//     then
 
-}
+// }
 
-var rand = monsterArray[Math.floor(Math.random() * myArray.length)];
-var rand1 = monsterArray[Math.floor(Math.random() * myArray.length)];
+// var rand = monsterArray[Math.floor(Math.random() * myArray.length)];
+// var rand1 = monsterArray[Math.floor(Math.random() * myArray.length)];
 
 
 // This is the function if I want a random monster generated, but not the same one twice.
@@ -174,7 +169,7 @@ var rand1 = monsterArray[Math.floor(Math.random() * myArray.length)];
 // };
 
 // To call the function that I created above.
-var generateMonster = monsterArray.randomDiffElement(lastRandomElement);
+// var generateMonster = monsterArray.randomDiffElement(lastRandomElement);
 
 
 //   $('canvas').on('click', function(){
@@ -200,11 +195,8 @@ var generateMonster = monsterArray.randomDiffElement(lastRandomElement);
             return;
           }else if (warrior.maxHealth > 0){
           alert('IMP ATTACK\nWarrior health is now: ' + warrior.maxHealth);
-          
-   }
-  });
+          }
 
-  
 }); // Closes Doc.ready
 
 

@@ -1,5 +1,5 @@
 body {
-	background-image: url("http://thekoalition.com/images/2013/12/witcher-3-background.jpg");
+	background-image: url("../Images/RPG_Background.jpg");
 }
 /********************
 	Start Page
@@ -49,9 +49,9 @@ Character Select Page
 	background: rgba(0, 0, 0, 0.8);
 	position: block;
 	text-align: center;
-	transition: 0.5 ;
+	/*transition: 0.5 ;*/
 	color:	white;
-	transform: rotateX(90deg);
+	/*transform: rotateX(90deg);*/
 }
 
 .charImage {
@@ -140,9 +140,9 @@ Character Select Page
 	background: rgba(0, 0, 0, 0.8);
 	position: block;
 	text-align: center;
-	transition: 0.5 ;
+	/*transition: 0.5 ;*/
 	color:	white;
-	transform: rotateX(90deg);
+	/*transform: rotateX(90deg);*/
 }
 
 .storyText{

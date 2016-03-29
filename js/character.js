@@ -60,12 +60,12 @@ var bossMonster ={
 
 // Arrays of monsters (level dependent)
 
-var rand =[imp, pitfiend];
-var rand1 = [imp1, pitfiend1, demon];
+// var rand =[imp, pitfiend];
+// var rand1 = [imp1, pitfiend1, demon];
 
 
-var rand = monsterArray[Math.floor(Math.random() * myArray.length)];
-var rand1 = monsterArray[Math
+// var rand = monsterArray[Math.floor(Math.random() * myArray.length)];
+// var rand1 = monsterArray[Math
 
 
 // var Character = function() {
