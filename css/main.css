@@ -84,7 +84,7 @@ Character Select Page
 #dwarfDiv{
 	width: 300px;
 	height: 500px;
-	border: 1px solid transparent;    
+	border: 1px solid transparent;
 	float: left;
 	margin: 15px;
 	margin-top: 20px;
@@ -97,7 +97,7 @@ Character Select Page
 #rogueDiv{
 	width: 300px;
 	height: 500px;
-	border: 1px solid transparent;    
+	border: 1px solid transparent;
 	float: left;
 	margin: 15px;
 	margin-top: 20px;
@@ -172,6 +172,8 @@ Character Select Page
 	border: 1px solid white;
 	height: 200px;
 	width: 200px;
+  background-image: url("../firstProjectV1/images/Keys.jpg");
+  background-size: cover;
 }
 
 #tutText {
@@ -183,7 +185,7 @@ Character Select Page
 }
 
 .active {
-	border: 1px solid yellow !important;	
+	border: 1px solid yellow !important;
 }
 
 /*******************
@@ -194,7 +196,7 @@ Character Select Page
 	width: 1100px;
 	height: 650px;
 	z-index: 2;
-	margin: 0 auto; 
+	margin: 0 auto;
 	margin-left: 100px
 	top: 100px;
 	display: none;
@@ -207,8 +209,8 @@ Character Select Page
     height: 100px;
     background-color: red;
     position: relative;
-    -webkit-animation-name: example; 
-    
+    -webkit-animation-name: example;
+
     -webkit-animation-iteration-count: infinite;
     animation-name: example;
     animation-iteration-count: infinite;
