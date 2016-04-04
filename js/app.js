@@ -73,6 +73,7 @@ $(document).ready(function(){
 
 // Movement********************************************************
 
+ // This is the movement commands for JCanvas
   // $('body').on('keypress', function(event){
   //   switch(event.which){
   //     case 119 :
@@ -233,7 +234,7 @@ $(document).ready(function(){
   //   }
   // };
 
-  // var monsterArray = [imp, pitfiend];
+  // var monsterArray = [imp, pitfiend, demon];
 
 // Adding in Dexterity as a modifier for missing and critHit
 
