@@ -20,7 +20,7 @@ var rogue = {
   maxHealth : 150,
   attack : 10,
   dexterity : 15,
-  experience : 0, 
+  experience : 0,
 };
 
 
@@ -116,7 +116,7 @@ var bossMonster ={
 //   this.health = this.maxHealth;
 //   this.strength = 5;
 //   this.dexterity = 2;
-//   this.wisdom = 0;  
+//   this.wisdom = 0;
 // };
 
 // var imp = new Imp('Barnabus');

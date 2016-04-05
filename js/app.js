@@ -176,7 +176,7 @@ $(document).ready(function(){
 // var generateMonster = monsterArray.randomDiffElement(lastRandomElement);
 
 
-//   $('canvas').on('click', function(){
+//
 //   (function loop() {
 //       var rand = Math.round(Math.random(500));
 //       enemyDead = setTimeout(function() {
@@ -186,6 +186,7 @@ $(document).ready(function(){
 //   }());
 // });
 
+  $('canvas').on('click', function(){
   var warriorAtk = imp.maxHealth=imp.maxHealth - warrior.attack;
       if (imp.maxHealth <= 0){
         alert('You killed the Imp, well done!');
@@ -200,10 +201,24 @@ $(document).ready(function(){
           }else if (warrior.maxHealth > 0){
           alert('IMP ATTACK\nWarrior health is now: ' + warrior.maxHealth);
           }
-
+  });
 }); // Closes Doc.ready
 
 
+// Inventory ********************************************************************
+//  The variable for when an item is received
+//  var newItemWeapon
+//  var inventory = function({
+//    $('#keep').click(function(){
+//    inventory.push(newItemWeapon)};
+//    $('#discard').click(function(){
+//     discardInventory.push(newItemWeapon);
+//   });
+// }
+//
+
+$('#begin').click(function() {
+    $('.tutPage').hide();
 
 
 // This also needs to be simplified, so that the levels can be added ontop of one another
