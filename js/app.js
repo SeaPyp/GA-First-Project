@@ -52,11 +52,11 @@ $(document).ready(function(){
   });
 
 
-// Function for highlighting only one div
+// Function for highlighting only one div and enabling button
   $('.character').click(function(){
     $('.character').removeClass('active');
     $(this).addClass('active');
-
+    $('#btnSelect').prop('disabled' false);
   });
 
 
@@ -186,7 +186,7 @@ $(document).ready(function(){
 //   }());
 // });
 
-  $('canvas').on('click', function(){
+  $('.battleScreen').on('click', function(){
   var warriorAtk = imp.maxHealth=imp.maxHealth - warrior.attack;
       if (imp.maxHealth <= 0){
         alert('You killed the Imp, well done!');
@@ -208,7 +208,7 @@ $(document).ready(function(){
 // Inventory ********************************************************************
 //  The variable for when an item is received
 //  var newItemWeapon
-//  var inventory = function({
+//  var inventory = function(){
 //    $('#keep').click(function(){
 //    inventory.push(newItemWeapon)};
 //    $('#discard').click(function(){
@@ -216,9 +216,6 @@ $(document).ready(function(){
 //   });
 // }
 //
-
-$('#begin').click(function() {
-    $('.tutPage').hide();
 
 
 // This also needs to be simplified, so that the levels can be added ontop of one another

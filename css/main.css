@@ -124,9 +124,6 @@ Character Select Page
 	background-size: cover;
 }
 
-
-
-
 /*******************
   Story So Far Page
 ********************/
@@ -191,7 +188,7 @@ Character Select Page
 /*******************
   	 Game Page
 ********************/
-/*
+
 .battleScreen {
 	width: 1100px;
 	height: 650px;
@@ -216,7 +213,7 @@ Character Select Page
     animation-iteration-count: infinite;
 }
 
-/* Chrome, Safari, Opera */
+/* Chrome, Safari, Opera
 /*@-webkit-keyframes example {
     0%   {left:0px; top:0px;}
     25%  {background-color:tomato; left:600px; top:400px;}
