@@ -72,6 +72,8 @@ $(document).ready(function(){
     // console.log($(this).attr('id'));
 
 // Movement********************************************************
+// Look at doing a text based thing instead.  Read the notes taken when getting info from MAtt after week
+// one project review.
 
  // This is the movement commands for JCanvas
   // $('body').on('keypress', function(event){
